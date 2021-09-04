@@ -22,6 +22,7 @@ const Input = (props) => {
           type={inputType}
           id={htmlFor}
           value={props.value}
+          autoComplete={props.autoComplete}
           onChange={props.onChange}
         />
 
@@ -30,8 +31,6 @@ const Input = (props) => {
             ? <span>{props.errorMessage || 'Введите верное значение'}</span>
             : null
         }
-
-        <span>{props.errorMessage}</span>
     </div>
   )
 }
