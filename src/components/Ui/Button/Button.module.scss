@@ -9,6 +9,19 @@
   border-radius: 4px;
   cursor: pointer;
 
+  &.error {
+    background-color: rgba(240, 87, 108, 1);
+  }
+
+  &.success {
+    background-color: rgba(161, 240, 69, 1);
+  }
+
+  &.primary {
+    color: #fff;
+    background-color: #2884f6;
+  }
+
   &:focus {
     outline: transparent;
   }
@@ -21,18 +34,5 @@
     color: #000;
     background-color: #ccc;
     cursor: not-allowed;
-  }
-
-  &.error {
-    background-color: rgba(240, 87, 108, 1);
-  }
-
-  &.success {
-    background-color: rgba(161, 240, 69, 1);
-  }
-
-  &.primary {
-    color: #fff;
-    background-color: #2884f6;
   }
 }
