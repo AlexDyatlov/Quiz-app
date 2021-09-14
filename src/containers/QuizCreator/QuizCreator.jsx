@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import classes from './QuizCreator.module.scss';
 
@@ -7,6 +7,7 @@ import { createControl, validate, validateForm } from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input';
 import Button from '../../components/Ui/Button/Button';
 import Select from '../../components/Ui/Select/Select';
+import axios from '../../axios/axios-quiz';
 
 function createOptionControl(number) {
   return createControl({
@@ -72,10 +73,21 @@ export default class QuizCreator extends Component {
     })
   };
 
-  createQuizHandler = (e) => {
+  createQuizHandler = async (e) => {
     e.preventDefault();
 
-    // todo: server
+    try {
+      await axios.post('/quizes.json', this.state.quiz);
+
+      this.setState({
+        quiz: [],
+        isFormValid: false,
+        rightAnswerId: 1,
+        formControls: createFormControls()
+      });
+    } catch (e) {
+     console.log(e)
+    }
   };
 
   changeHandler = (value, controlName) => {
