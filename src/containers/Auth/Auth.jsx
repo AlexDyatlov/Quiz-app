@@ -128,7 +128,7 @@ class Auth extends Component {
     return (
       <div className={classes.Auth}>
         <div>
-          <h1>Авторизация</h1>
+          <h1>Аутентификация</h1>
 
           <form className={classes.Auth__Form} onSubmit={this.submitHandler}>
           
